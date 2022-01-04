@@ -1,5 +1,5 @@
 {
-  "name": "dbus-native",
+  "name": "@homebridge/dbus-native",
   "author": "Andrey Sidorov <sidorares@yandex.com>",
   "version": "0.4.0",
   "keywords": [
@@ -32,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/sidorares/node-dbus.git"
+    "url": "https://github.com/homebridge/dbus-native.git"
   },
   "bin": {
     "dbus2js": "./bin/dbus2js.js"
@@ -46,8 +46,10 @@
     "safe-buffer": "^5.1.1",
     "xml2js": "^0.4.17"
   },
-  "optionalDependencies": {
-    "abstract-socket": "^2.0.0"
+  "uncomment": {
+    "optionalDependencies": {
+      "abstract-socket": "^2.0.0"
+    }
   },
   "devDependencies": {
     "eslint": "^5.0.0",
