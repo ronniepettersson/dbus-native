@@ -6,6 +6,13 @@ D-bus protocol client and server for node.js
 
 [![Build Status](https://secure.travis-ci.org/sidorares/dbus-native.png)](http://travis-ci.org/sidorares/dbus-native)
 
+Fork Status
+------------
+
+This fork is maintained with the following two changes:
+* Removed the optional `abstract-socket` dependency for faster installs
+* Moved to our `long.js` fork to work around a crash on `ARMv6` platforms running node 16.1+
+
 Installation
 ------------
 
