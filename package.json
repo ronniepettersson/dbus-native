@@ -1,6 +1,6 @@
 {
-  "name": "@homebridge/dbus-native",
-  "author": "Andrey Sidorov <sidorares@yandex.com>",
+  "name": "@ronniepettersson/dbus-native",
+  "author": "Ronnie Pettersson",
   "version": "0.4.1",
   "keywords": [
     "dbus",
@@ -23,28 +23,23 @@
     "examples": "examples"
   },
   "main": "index.js",
-  "maintainers": [
-    {
-      "name": "Andrey Sidorov",
-      "email": "sidoares@yandex.ru"
-    }
-  ],
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/homebridge/dbus-native.git"
+    "url": "https://github.com/ronniepettersson/dbus-native.git"
   },
   "bin": {
     "dbus2js": "./bin/dbus2js.js"
   },
   "dependencies": {
-    "event-stream": "^4.0.0",
-    "hexy": "^0.2.10",
     "@homebridge/long": "^5.2.1",
-    "optimist": "^0.6.1",
-    "put": "0.0.6",
-    "safe-buffer": "^5.1.1",
-    "xml2js": "^0.4.17"
+    "@ronniepettersson/put": "^1.1.0",
+    "event-stream": "^4.0.1",
+    "hexy": "^0.3.4",
+    "minimist": "^1.2.5",
+    "safe-buffer": "^5.2.1",
+    "xml2js": "^0.4.23"
   },
   "comment": {
     "optionalDependencies": {
@@ -52,14 +47,14 @@
     }
   },
   "devDependencies": {
-    "eslint": "^5.0.0",
-    "eslint-config-prettier": "^3.0.0",
-    "eslint-plugin-markdown": "^1.0.0-beta.6",
-    "eslint-plugin-prettier": "^3.0.0",
-    "husky": "^1.0.0",
-    "lint-staged": "^8.0.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
     "mocha": "*",
-    "prettier": "^1.7.4"
+    "prettier": "^2.5.1"
   },
   "scripts": {
     "lint": "npm run lint:docs && npm run lint:code",
@@ -85,6 +80,6 @@
     "trailingComma": "none"
   },
   "engine": {
-    "node": ">=8.0"
+    "node": "^14.19.0 || ^16.13.2"
   }
 }

@@ -1,10 +1,15 @@
-const Buffer = require('safe-buffer').Buffer;
-const fs = require('fs');
-const assert = require('assert');
-const unmarshall = require('../lib/message').unmarshall;
-const marshall = require('../lib/message').marshall;
+import {Buffer} from 'safe-buffer';
+import fs from 'fs';
+import assert from 'assert';
+import {marshall} from '../lib/message.js';
+import {unmarshall}  from '../lib/message.js';
+import * as path  from 'path';
+import {fileURLToPath} from 'url';
 
-const dir = `${__dirname}/fixtures/messages/`;
+const __filename = fileURLToPath( import.meta.url );
+const __dirname = path.dirname(__filename);
+
+const dir = path.join(__dirname,`/fixtures/messages/`);
 
 describe('given base-64 encoded files with complete messages', function() {
   it('should be able to read them all', function() {

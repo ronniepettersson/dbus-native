@@ -1,17 +1,18 @@
 // simple script to monitor incoming/outcoming dbus messages
 // needs a lot of cleanup but does the job
 
-const net = require('net');
-const abs = require('abstract-socket');
-const through2 = require('through2');
-const optimist = require('optimist');
-const message = require('../lib/message');
-const readLine = require('../lib/readline');
+import net from 'net';
+import abs from 'abstract-socket';
+import through2 from 'through2';
+import minimist from 'minimist';
+import message from '../lib/message';
+import readLine from '../lib/readline';
 
 var sessionBusAddress = process.env.DBUS_SESSION_BUS_ADDRESS;
 var m = sessionBusAddress.match(/abstract=([^,]+)/);
 
-var isSystemBus = optimist.boolean(['system']).argv.system;
+var isSystemBus = minimist(process.argv).system;
+
 
 var address = isSystemBus ? '/var/run/dbus/system_bus_socket' : `\0${m[1]}`;
 

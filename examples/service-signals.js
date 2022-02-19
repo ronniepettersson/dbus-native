@@ -1,5 +1,5 @@
-const dbus = require('../index');
-const inspect = require('util').inspect;
+import dbus from '../index';
+import { inspect as inspect } from 'util';
 
 /*
 	This example show how to expose signals on a DBus service, and how to emit them.

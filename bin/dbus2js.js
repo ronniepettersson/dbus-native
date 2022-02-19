@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const xml2js = require('xml2js');
+import fs from 'fs';
+import xml2js from 'xml2js';
 const xml2js_opts = Object.assign({}, xml2js.defaults["0.1"], { explicitArray: true });
-const dbus = require('../index');
-const optimist = require('optimist');
+import dbus from '../index';
+import minimist from 'minimist';
 
-var argv = optimist.boolean(['server', 'dump']).argv;
+var argv = minimist(process.argv);
 
 function die(err) {
   console.log(err);

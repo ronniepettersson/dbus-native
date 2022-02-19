@@ -1,8 +1,8 @@
-const fs = require('fs');
-const binarystream = require('binary');
-const EventEmitter = require('events').EventEmitter;
-const message = require('../../lib/message');
-const hexy = require('hexy').hexy;
+import fs from 'fs';
+import binarystream from 'binary';
+import { EventEmitter as EventEmitter } from 'events';
+import message from '../../lib/message';
+import { hexy as hexy } from 'hexy';
 
 const packets = fs.readFileSync('./packets.bin');
 

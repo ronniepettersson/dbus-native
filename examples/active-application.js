@@ -1,4 +1,4 @@
-const dbus = require('../index');
+import dbus from '../index';
 
 var bus = dbus.sessionBus();
 var ayatana = bus.getService('org.ayatana.bamf');

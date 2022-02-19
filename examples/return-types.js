@@ -1,4 +1,4 @@
-const dbus = require('../index');
+import dbus from '../index';
 
 /*
 	This test file's purpose is to show example of possible return types for functions.

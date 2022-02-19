@@ -1,14 +1,14 @@
 // dbus.freedesktop.org/doc/dbus-specification.html
 
-const EventEmitter = require('events').EventEmitter;
-const net = require('net');
+import { EventEmitter as EventEmitter } from 'events';
+import net from 'net';
 
-const constants = require('./lib/constants');
-const message = require('./lib/message');
-const clientHandshake = require('./lib/handshake');
-const serverHandshake = require('./lib/server-handshake');
-const MessageBus = require('./lib/bus');
-const server = require('./lib/server');
+import constants from './lib/constants';
+import message from './lib/message';
+import clientHandshake from './lib/handshake';
+import serverHandshake from './lib/server-handshake';
+import MessageBus from './lib/bus';
+import server from './lib/server';
 
 function createStream(opts) {
   if (opts.stream) return opts.stream;

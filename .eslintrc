@@ -1,16 +1,16 @@
 {
   "extends": [
-    "eslint:recommended",
+
     "prettier"
   ],
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
   "plugins": [
     "markdown"
   ],
   "rules": {
-    "no-constant-condition": ["error", { "checkLoops": false }],
     "eqeqeq": ["error", "always"],
     "no-console": "off",
     "no-empty": "off"

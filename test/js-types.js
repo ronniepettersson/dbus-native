@@ -1,6 +1,6 @@
-const marshall = require('../lib/marshall');
-const unmarshall = require('../lib/unmarshall');
-const assert = require('assert');
+import marshall from '../lib/marshall.js';
+import unmarshall from '../lib/unmarshall.js';
+import assert from 'assert';
 
 function test(signature, data) {
   var marshalledBuffer = marshall(signature, data);
@@ -17,8 +17,10 @@ function test(signature, data) {
 
 describe('when signature is a{sX} and hashAsObject is used', function() {
   xit('serialises to expected value', function() {
-    test('a{sv}', {
-      test1: { subobj: { a1: 10, a2: 'qqq', a3: 1.11 }, test2: 12 }
-    });
+    const signature = 'a{sv}';
+    const data = { test1: { subobj: { a1: 10, a2: 'qqq', a3: 1.11 }, test2: 12 } };
+    var marshalledBuffer = marshall(signature, data);
+    var result = unmarshall(marshalledBuffer, signature);
+    assert.deepStrictEqual(data, result);
   });
 });

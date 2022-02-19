@@ -1,4 +1,4 @@
-const dbus = require('../index');
+import dbus from '../index';
 
 /*
 	This test file's purpose is to show how to write a simple, basic DBus service with this library.

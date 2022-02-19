@@ -1,16 +1,19 @@
-const message = require('../lib/message');
-const assert = require('assert');
+import {marshall} from '../lib/message.js';
+import {unmarshall} from '../lib/message.js';
+import assert from 'assert';
+
+import * as tests from './testdata.js';
 
 function msg2buff(msg) {
-  return message.marshall(msg);
+  return marshallMessage(msg);
 }
 
 function buff2msg(buff) {
-  return message.unmarshall(buff);
+  return unmarshall(buff);
 }
 
 describe('message marshall/unmarshall', function() {
-  var tests = require('./testdata.js');
+  //var tests = require('./testdata.cjs');
   var testName, testData, testNum;
   for (testName in tests) {
     for (testNum = 0; testNum < tests[testName].length; ++testNum) {

@@ -1,6 +1,6 @@
-const net = require('net');
-const abs = require('abstract-socket');
-const hexy = require('hexy').hexy;
+import net from 'net';
+import abs from 'abstract-socket';
+import { hexy as hexy } from 'hexy';
 
 net
   .createServer(function(s) {

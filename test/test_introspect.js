@@ -1,6 +1,10 @@
-const introspect = require('../lib/introspect');
-const fs = require('fs');
-const path = require('path');
+import processXML from '../lib/introspect.js';
+import fs from 'fs';
+import path from 'path';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath( import.meta.url );
+const __dirname = path.dirname(__filename);
 
 // Introspection test cases
 var testCases = [{ desc: 'Basic Example', file: 'example' }];
@@ -26,7 +30,7 @@ function testXml(fname) {
       fs.readFile(fpath + '.xml', function(err, xml_data) {
         if (err) reject(err);
         else {
-          introspect.processXML(err, xml_data, dummyObj, function(
+          processXML(err, xml_data, dummyObj, function(
             err,
             proxy,
             nodes

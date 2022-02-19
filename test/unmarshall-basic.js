@@ -1,8 +1,8 @@
-const Buffer = require('safe-buffer').Buffer;
-const marshall = require('../lib/marshall');
-const unmarshall = require('../lib/unmarshall');
-const assert = require('assert');
-const Long = require('@homebridge/long');
+import { Buffer as Buffer } from 'safe-buffer';
+import marshall from '../lib/marshall.js';
+import unmarshall from '../lib/unmarshall.js';
+import assert from 'assert';
+import Long from '@homebridge/long';
 
 var LongMaxS64 = Long.fromString('9223372036854775807', false);
 var LongMinS64 = Long.fromString('-9223372036854775808', false);

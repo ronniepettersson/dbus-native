@@ -1,5 +1,5 @@
-const dbus = require('../../index');
-const addrx11 = require('../../lib/address-x11');
+import dbus from '../../index';
+import addrx11 from '../../lib/address-x11';
 
 addrx11(function(err, address) {
   var bus = dbus.sessionBus({ busAddress: address });
