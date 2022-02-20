@@ -2,12 +2,13 @@
 
 import {EventEmitter as EventEmitter} from 'events';
 import net from 'net';
-
-import constants from './lib/constants';
-import message from './lib/message';
-import clientHandshake from './lib/handshake';
-import serverHandshake from './lib/server-handshake';
-import MessageBus from './lib/bus';
+import message from './lib/message.js';
+import clientHandshake from './lib/handshake.js';
+import serverHandshake from './lib/server-handshake.js';
+import MessageBus from './lib/bus.js';
+import {eventStream} from 'event-stream';
+import {spawn} from 'child_process';
+import abs from 'abstract-socket';
 
 function createStream(opts) {
   if (opts.stream) return opts.stream;
@@ -40,7 +41,7 @@ function createStream(opts) {
         case 'unix':
           if (params.socket) return net.createConnection(params.socket);
           if (params.abstract) {
-            var abs = require('abstract-socket');
+            //var abs = require('abstract-socket');
             return abs.connect('\u0000' + params.abstract);
           }
           if (params.path) return net.createConnection(params.path);
@@ -48,8 +49,8 @@ function createStream(opts) {
             "not enough parameters for 'unix' connection - you need to specify 'socket' or 'abstract' or 'path' parameter"
           );
         case 'unixexec':
-          var eventStream = require('event-stream');
-          var spawn = require('child_process').spawn;
+          //var eventStream = require('event-stream');
+          //var spawn = require('child_process').spawn;
           var args = [];
           for (var n = 1; params['arg' + n]; n++) args.push(params['arg' + n]);
           var child = spawn(params.path, args);
@@ -152,9 +153,9 @@ export function sessionBus(opts) {
 };
 
 //module.exports.messageType = constants.messageType;
-export let messageType = constants.messageType; 
+export { messageType } from './lib/constants.js';
 //module.exports.createConnection = createConnection;
 
-export { createServer } from './lib/server';
+export { createServer } from './lib/server.js';
 
 //module.exports.createServer = server.createServer;

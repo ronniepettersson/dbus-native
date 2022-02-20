@@ -1,4 +1,4 @@
-import dbus from '../../index';
+import dbus from '../../index.js';
 
 dbus
   .createServer(function(conn) {
