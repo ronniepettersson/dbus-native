@@ -8,7 +8,6 @@ import message from './lib/message';
 import clientHandshake from './lib/handshake';
 import serverHandshake from './lib/server-handshake';
 import MessageBus from './lib/bus';
-import server from './lib/server';
 
 function createStream(opts) {
   if (opts.stream) return opts.stream;
