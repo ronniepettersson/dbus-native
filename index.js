@@ -1,6 +1,6 @@
 // dbus.freedesktop.org/doc/dbus-specification.html
 
-import { EventEmitter as EventEmitter } from 'events';
+import {EventEmitter as EventEmitter} from 'events';
 import net from 'net';
 
 import constants from './lib/constants';
@@ -70,7 +70,7 @@ function createStream(opts) {
   }
 }
 
-function createConnection(opts) {
+export function createConnection(opts) {
   var self = new EventEmitter();
   if (!opts) opts = {};
   var stream = (self.stream = createStream(opts));
@@ -132,24 +132,30 @@ function createConnection(opts) {
   return self;
 }
 
-module.exports.createClient = function(params) {
+//module.exports.createClient = function(params) {
+export function createClient(params) {
   var connection = createConnection(params || {});
   return new MessageBus(connection, params || {});
 };
 
-module.exports.systemBus = function() {
-  return module.exports.createClient({
+//module.exports.systemBus = function() {
+export function systemBus() {
+  return createClient({
     busAddress:
       process.env.DBUS_SYSTEM_BUS_ADDRESS ||
       'unix:path=/var/run/dbus/system_bus_socket'
   });
 };
 
-module.exports.sessionBus = function(opts) {
-  return module.exports.createClient(opts);
+//module.exports.sessionBus = function(opts) {
+export function sessionBus(opts) {
+  return createClient(opts);
 };
 
-module.exports.messageType = constants.messageType;
-module.exports.createConnection = createConnection;
+//module.exports.messageType = constants.messageType;
+export let messageType = constants.messageType; 
+//module.exports.createConnection = createConnection;
 
-module.exports.createServer = server.createServer;
+export { createServer } from './lib/server';
+
+//module.exports.createServer = server.createServer;
