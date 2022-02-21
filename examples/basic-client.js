@@ -1,4 +1,4 @@
-import dbus from '../index';
+import * as dbus from '../index.js';
 
 /*
 	This test file's purpose is to show how to query a simple, basic DBus service with this library.
@@ -19,7 +19,7 @@ const interfaceName = serviceName;
 const objectPath = `/${serviceName.replace(/\./g, '/')}`;
 
 // First, connect to the session bus (works the same on the system bus, it's just less permissive)
-const sessionBus = dbus.sessionBus();
+const sessionBus = dbus.systemBus();
 
 // Check the connection was successful
 if (!sessionBus) {

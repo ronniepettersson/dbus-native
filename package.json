@@ -1,7 +1,7 @@
 {
   "name": "@ronniepettersson/dbus-native",
   "author": "Ronnie Pettersson",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "keywords": [
     "dbus",
     "dcop",
@@ -22,8 +22,11 @@
     "test": "test",
     "examples": "examples"
   },
-  "main": "index.js",
+  "main": "./index.js",
+  "typings": "index.d.ts",
   "type": "module",
+
+
   "license": "MIT",
   "repository": {
     "type": "git",
